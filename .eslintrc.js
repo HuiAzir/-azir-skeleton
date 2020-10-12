@@ -15,6 +15,17 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
+  settings: {
+    'import/resolver': {
+      alias: {
+        map: [
+          ['@src', './src'],
+          ['@components', './src/components'],
+        ],
+        extensions: ['.js', '.jsx', '.ts', 'tsx', '.json'],
+      },
+    },
+  },
   plugins: [
     'react',
     '@typescript-eslint',
