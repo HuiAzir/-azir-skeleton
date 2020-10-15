@@ -3,9 +3,6 @@ module.exports = {
     [
       'postcss-preset-env',
       'autoprefixer',
-      {
-        // Options
-      },
     ],
   ],
 };

@@ -9,16 +9,10 @@ const config = merge(baseWebpackConfig, {
   module: {
     rules: [
       {
-        test: /.jsx?$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
-      },
-      {
         test: /\.s[ac]ss$/i,
         use: [
           MiniCssExtractPlugin.loader,
+          'css-modules-typescript-loader',
           {
             loader: 'css-loader',
             options: {
@@ -33,6 +27,24 @@ const config = merge(baseWebpackConfig, {
           {
             loader: 'sass-loader', options: { sourceMap: true },
           },
+        ],
+      },
+      {
+        test: /\.css$/i,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-modules-typescript-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 2,
+              modules: {
+                auto: true,
+                localIdentName: '[hash:base64]',
+              },
+            },
+          },
+          'postcss-loader',
         ],
       },
     ],

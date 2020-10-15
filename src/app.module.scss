@@ -1,9 +1,35 @@
-$body-color: red;
+$body-color: #f5f5f5;
 
 body {
   background-color: $body-color;
 }
 
 .app {
-  color: #ffffff;
+  display: grid;
+  grid-template-columns: 1fr 2.5fr 1fr;
+  grid-template-areas:
+    "header header header"
+    "components workbench setter"
+    "footer footer footer";
+  transition: all .2s ease;
+
+  .header {
+    grid-area: header;
+    height: 60px;
+  }
+
+  .components {
+    grid-area: components;
+    height: calc(100vh - 60px);
+  }
+
+  .workbench {
+    grid-area: workbench;
+    height: calc(100vh - 60px);
+  }
+
+  .setter {
+    grid-area: setter;
+    height: calc(100vh - 60px);
+  }
 }
