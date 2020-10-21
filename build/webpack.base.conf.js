@@ -18,89 +18,14 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /.tsx?$/,
+        test: /.[tj]sx?$/,
         exclude: /node_modules/,
-        use: ['ts-loader'],
-      },
-      {
-        test: /.jsx?$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
-      },
-      {
-        test: /\.s[ac]ss$/i,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-modules-typescript-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              modules: {
-                auto: true,
-                localIdentName: '[path][name]__[local]--[hash:base64:5]',
-              },
-            },
-          },
-          'postcss-loader',
-          {
-            loader: 'sass-loader',
-            options: { sourceMap: true },
-          },
-        ],
-      },
-      {
-        test: /\.less$/i,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-modules-typescript-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              modules: {
-                auto: true,
-                localIdentName: '[path][name]__[local]--[hash:base64:5]',
-              },
-            },
-          },
-          'postcss-loader',
-          {
-            loader: 'less-loader',
-            options: {
-              lessOptions: {
-                modifyVars: {
-                  'primary-color': '#1DA57A',
-                  'link-color': '#1DA57A',
-                  'border-radius-base': '2px',
-                },
-                javascriptEnabled: true,
-              },
-            },
-          },
-        ],
-      },
-      {
-        test: /\.css$/i,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-modules-typescript-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              modules: {
-                auto: true,
-                localIdentName: '[path][name]__[local]--[hash:base64:5]',
-              },
-            },
-          },
-          'postcss-loader',
-        ],
+        use: ['babel-loader'],
       },
     ],
   },
   resolve: {
-    extensions: ['.tsx', 'ts', '.jsx', '.js'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
     alias: {
       '@': path.resolve(__dirname, '../src'),
       '@components': path.resolve(__dirname, '../src/components'),
