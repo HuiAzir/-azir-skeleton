@@ -44,6 +44,7 @@ Comp.defaultProps = {
   mark: false,
   keyboard: false,
   underline: false,
+  children: `Introduction`,
 };
 
 export default Comp;

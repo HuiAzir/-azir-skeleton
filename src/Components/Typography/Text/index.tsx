@@ -48,6 +48,9 @@ Comp.defaultProps = {
   underline: false,
   strong: false,
   type: undefined,
+  children: `uniform the user interface specs for internal background projects, lower the unnecessary
+        cost of design differences and implementation and liberate the resources of design and
+        front-end development`,
 };
 
 export default Comp;
