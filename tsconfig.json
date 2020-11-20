@@ -11,8 +11,8 @@
     "allowJs": true,
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
-    "declaration": true,
-    "declarationDir": "./typings",
+    // "declaration": true,
+    // "declarationDir": "./typings",
     "lib": [
       "dom",
       "dom.iterable",

@@ -3,7 +3,12 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['plugin:react/recommended', 'plugin:@typescript-eslint/recommended', 'airbnb'],
+  extends: [
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'airbnb',
+    'plugin:prettier/recommended',
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -51,5 +56,6 @@ module.exports = {
         tsx: 'never',
       },
     ],
+    '@typescript-eslint/indent': ['error', 2],
   },
 };
